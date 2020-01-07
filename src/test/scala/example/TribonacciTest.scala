@@ -1,5 +1,3 @@
-import kata.Tribonacci
-
 // You can test using ScalaTest (http://www.scalatest.org/).
 import org.scalatest._
 import kata.Tribonacci
