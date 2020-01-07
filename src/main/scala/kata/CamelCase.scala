@@ -1,6 +1,8 @@
 /* https://www.codewars.com/kata/517abf86da9663f1d2000003/train/scala
  */
 
+package kata
+
 object CamelCase {
   def toCamelCase(str: String): String = {
     str.scanLeft(' ')((a, b) => {
