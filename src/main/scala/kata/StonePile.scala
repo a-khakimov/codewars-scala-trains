@@ -1,9 +1,8 @@
 package kata
 
 object Pile {
-  private def toBin(n: Int, len: Int): List[Int] = {
-    if (len == 0) Nil else
-      (n % 2) :: toBin(n / 2, len - 1)
+  def toBin(n: Int, len: Int): IndexedSeq[Int] = {
+    (0 until len).map(b => ((n >> b) & 0x01))
   }
 
   def minDiff(a: List[Int]): Int = {
