@@ -1,4 +1,4 @@
-![Codewars](https://www.codewars.com/users/ainr/badges/small)
+![Codewars](https://www.codewars.com/users/ainr/badges/large)
 
 # Codewars trains
 
