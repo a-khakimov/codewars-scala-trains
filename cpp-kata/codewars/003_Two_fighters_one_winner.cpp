@@ -64,7 +64,7 @@ std::string declareWinner(Fighter* fighter1, Fighter* fighter2, const std::strin
            : fight(*fighter2, *fighter1);
 }
 
-
+#if false
 int main()
 {
   Fighter fighter1("Lew", 10, 2);
@@ -75,3 +75,4 @@ int main()
   std::cout << "expected: " << expected << ", actual: " << actual << std::endl;
 
 }
+#endif
