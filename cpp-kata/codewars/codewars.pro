@@ -4,5 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    554ca54ffa7d91b236000023.cpp \
-    59eb1e4a0863c7ff7e000008.cpp
+    000_Delete_occurrences.cpp \
+    001_The_boolean_order.cpp \
+    002_Simple_assembler_interpreter.cpp \
+    003_Two_fighters_one_winner.cpp
