@@ -10,4 +10,6 @@ SOURCES += \
     003_Two_fighters_one_winner.cpp \
     004_Fun_with_operators.cpp \
     005_Array_squareUp_b.cpp \
-    006_Matrix_squareUp_b.cpp
+    006_Matrix_squareUp_b.cpp \
+    007_Principal_Diagonal_VS_Secondary_Diagonal.cpp
+
