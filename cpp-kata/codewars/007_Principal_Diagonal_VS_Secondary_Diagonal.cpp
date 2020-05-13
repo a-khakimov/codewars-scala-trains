@@ -27,7 +27,7 @@ std::string diagonal(std::vector<std::vector<int>> matrix)
 using V1 = std::vector<int>;
 using V2 = std::vector<V1>;
 
-#if true
+#if false
 int main()
 {
   std::cout << diagonal(V2{
