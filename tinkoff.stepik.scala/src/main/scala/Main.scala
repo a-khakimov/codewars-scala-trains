@@ -64,14 +64,33 @@ object Main {
     data.splitAt(data.size / 2)._2.head
   }
 
+
+  //----------------------------------------------------//
+  case class Pet(name: String, says: String)
+  val pet = Pet("Rex", "0")
+
+  val saysMeow = (says : String) => says == "meow" || says == "nya"
+  val saysRobot = (says : String) => says.contains("0") || says.contains("1")
+
+  val kind = pet match {
+    case pet if pet.name == "Rex" && !saysMeow(pet.says) && !saysRobot(pet.says) => "dog"
+    case pet if pet.name != "Rex" && saysMeow(pet.says) && !saysRobot(pet.says) => "cat"
+    case pet if pet.name != "Rex" && saysRobot(pet.says)  => "robot"
+    case _ => "unknown"
+  }
+
+  val robotRe = "(0|1)+".r
+  val kind2 = pet match {
+    case Pet("Rex", _) => "dog"
+    case Pet(_, "meow"|"nya") => "cat"
+    case Pet(_, robotRe(_)) => "robot"
+    case Pet(_, _) => "unknown"
+  }
+
+  //----------------------------------------------------//
+
   def main(args: Array[String]) : Unit = {
-    val n = 4
-    for (
-      i <- 1 until n;
-      j <- 1 until n
-    ) {
-      if (BigInt(i).gcd(j) == 1)
-        println(i + " " + j)
-    }
+
+    println(kind2)
   }
 }
