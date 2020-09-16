@@ -1,5 +1,7 @@
 import scala.annotation.tailrec
 import scala.io.StdIn._
+import scala.math.BigDecimal.int2bigDecimal
+import scala.math.BigInt.int2bigInt
 
 object Main {
   //----------------------------------------------------//
@@ -63,7 +65,13 @@ object Main {
   }
 
   def main(args: Array[String]) : Unit = {
-    println(middle("Scala"))
-    println(middle(Seq(1, 7, 5, 9)))
+    val n = 4
+    for (
+      i <- 1 until n;
+      j <- 1 until n
+    ) {
+      if (BigInt(i).gcd(j) == 1)
+        println(i + " " + j)
+    }
   }
 }
