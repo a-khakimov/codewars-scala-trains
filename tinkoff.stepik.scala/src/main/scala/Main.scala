@@ -88,9 +88,30 @@ object Main {
   }
 
   //----------------------------------------------------//
+  def commitValidator(input: List[String]) = {
+    val r_name = "([a-zA-Z]+)".r
+    val r_emailDomain = "\\w+@\\w+\\.\\w+".r
+
+    val result = input match {
+      case List(r_name(name), _*) => name
+      case List(name@r_emailDomain(em), _*) => s"$name $em"
+      case _ => "invalid"
+    }
+    result
+  }
+
+  def test(result: String, correctResult: String) = {
+    if (result != correctResult)
+      println("Failed: [" + result + "]. Should be [" + correctResult + "]")
+      else
+      println("PASSED")
+  }
 
   def main(args: Array[String]) : Unit = {
 
-    println(kind2)
+
+    test(commitValidator(List("")), "invalid")
+    test(commitValidator(List("oleg", "oleg@email.com", "7bdaf0a1be3", "a8af118b1a2", "28d74b7a3fe")), "oleg email.com")
+    test(commitValidator(List("oleg oleg@email.com", "7bdaf0a1be3", "a8af118b1a2", "28d74b7a3fe")), "oleg email.com")
   }
 }
