@@ -67,3 +67,25 @@ object RangeExtraction extends App {
   println(solution(List(4)))
   println(solution(List()))
 }
+
+object Snail extends App {
+
+  def snail(xs: List[List[Int]]): List[Int] = {
+    @tailrec def go(arr : List[List[Int]], acc: List[Int]): List[Int] = {
+      arr match {
+        case Nil => acc
+        case _ => go(arr.drop(1).transpose.reverse, acc ++ arr.head)
+      }
+    }
+    go(xs, List.empty[Int])
+  }
+
+  val a: List[List[Int]] = List(
+    List(1, 2, 3),
+    List(1, 2, 3)
+  )
+
+  //println(rotate(a))
+  println(snail(a))
+}
+
